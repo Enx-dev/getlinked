@@ -5,13 +5,11 @@ import Button from "@/components/shared/button";
 import { Unica_One } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import Link from "next/link";
+import Counter from "@/components/Home/Counter";
 
 type Props = {};
 
-const unicaOne = Unica_One({
-  weight: "400",
-  subsets: ["latin"],
-});
+
 
 const HomeSection = (props: Props) => {
   return (
@@ -78,24 +76,7 @@ const HomeSection = (props: Props) => {
           <Link className="sm_tablet:hidden tablet:block mt-4" href="/register">
             <Button variant="withHover" label="Register" />
           </Link>
-          <div
-            className={twMerge(
-              unicaOne.className,
-              "flex sm_tablet:pt-4 pt-8 gap-10"
-            )}>
-            <span className="flex items-baseline">
-              <p className={twMerge(unicaOne.className, "text-5xl")}>00</p>
-              <span className="text-xs">h</span>
-            </span>
-            <span className="flex items-baseline">
-              <p className="text-5xl">00</p>
-              <span className="text-xs">m</span>
-            </span>
-            <span className="flex items-baseline">
-              <p className="text-5xl">00</p>
-              <span className="text-xs">s</span>
-            </span>
-          </div>
+          <Counter />
         </div>
         <div
           id="pane2"

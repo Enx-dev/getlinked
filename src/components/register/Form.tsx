@@ -36,6 +36,7 @@ type Props = {};
 
 const RegisterForm = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const formSchema = z.object({
     teamName: z
       .string()
@@ -79,6 +80,7 @@ const RegisterForm = (props: Props) => {
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const baseUrl = "https://backend.getlinked.ai";
+    setIsLoading(true);
     try {
       await axios
         .post(`https://backend.getlinked.ai/hackathon/registration`, {
@@ -93,6 +95,9 @@ const RegisterForm = (props: Props) => {
         .then(() => {
           setIsOpen(true);
           form.reset();
+        })
+        .finally(() => {
+          setIsLoading(false);
         });
     } catch (error: any) {
       toast.error(error.message);
@@ -298,17 +303,17 @@ const RegisterForm = (props: Props) => {
                         onCheckedChange={field.onChange}
                       />
                     </FormControl>
-                    <div className="space-y-1 leading-none">
-                      <FormLabel className="text-body">
-                        I agreed with the event terms and conditions and privacy
-                        policy
-                      </FormLabel>
-                    </div>
+                    <FormLabel className="text-body">
+                      I agreed with the event terms and conditions and privacy
+                      policy
+                    </FormLabel>
+
+                    <FormMessage />
                   </FormItem>
                 )}
               />
             </div>
-            <CustomButton />
+            <CustomButton loading={isLoading} />
           </form>
         </Form>
       </CardContent>
@@ -316,14 +321,15 @@ const RegisterForm = (props: Props) => {
   );
 };
 
-export default RegisterForm;
-
-const CustomButton = () => {
+const CustomButton = ({ loading }: { loading: boolean }) => {
   return (
     <button
+      disabled={loading}
       tabIndex={0}
-      className="bg-gradient-to-r mt-8 text-white focus-within:outline-none pointer-events-auto from-accent to-primary rounded-md px-12 py-4 min-w-[8rem] items-start justify-center self-stretch">
-      Register
+      className="bg-gradient-to-r mt-8 text-white focus-within:outline-none pointer-events-auto from-accent to-primary rounded-md px-12 py-4 min-w-[8rem] items-start justify-center self-stretch disabled:opacity-50">
+      {loading ? "Submitting..." : "Register"}
     </button>
   );
 };
+
+export default RegisterForm;

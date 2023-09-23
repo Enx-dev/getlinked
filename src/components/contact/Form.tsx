@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Button from "../shared/button";
 import {
   Form,
@@ -25,6 +25,7 @@ import Image from "next/image";
 type Props = {};
 
 const ContactForm = (props: Props) => {
+  const [isLoading, setIsLoading] = useState(false);
   const formSchema = z.object({
     firstName: z
       .string()
@@ -54,6 +55,7 @@ const ContactForm = (props: Props) => {
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const baseUrl = "https://backend.getlinked.ai";
+    setIsLoading(true);
     try {
       await axios
         .post(`https://backend.getlinked.ai/hackathon/contact-form`, {
@@ -64,6 +66,9 @@ const ContactForm = (props: Props) => {
         .then(() => {
           toast.success("Message Sent");
           form.reset();
+        })
+        .finally(() => {
+          setIsLoading(false);
         });
     } catch (error: any) {
       toast.error(error.message);
@@ -148,7 +153,7 @@ const ContactForm = (props: Props) => {
                 </FormItem>
               )}
             />
-            <CustomButton />
+            <CustomButton loading={isLoading} />
           </form>
         </Form>
       </CardContent>
@@ -183,12 +188,13 @@ const ContactForm = (props: Props) => {
 
 export default ContactForm;
 
-const CustomButton = () => {
+const CustomButton = ({ loading }: { loading: boolean }) => {
   return (
     <button
       tabIndex={0}
-      className="bg-gradient-to-r mt-8 text-white focus-within:outline-none pointer-events-auto from-accent to-primary rounded-md px-12 py-4 min-w-[8rem] items-start justify-center self-center">
-      Submit
+      disabled={loading}
+      className="bg-gradient-to-r mt-8 text-white focus-within:outline-none pointer-events-auto from-accent to-primary rounded-md px-12 py-4 min-w-[8rem] items-start justify-center self-center disabled:opacity-50">
+      {loading ? "Submitting..." : "Submit"}
     </button>
   );
 };
