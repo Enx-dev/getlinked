@@ -2,26 +2,166 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: #150e28;
+    --foreground: #fff;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: #903aff;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: #903aff;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: #fe34b9;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: #d434fe;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: #d434fe;
+    --input: 0 0% 89.8%;
+    --ring: #d434fe;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #150e28;
+    --foreground: #fff;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: #903aff;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: #fe34b9;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: #d434fe;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/*"main-purple": "#903AFF",
+        background: "#150E28",
+        "main-pink": "#FE34B9",
+        accent: "#D434FE",
+        footer: "#100B20",
+*/
+@layer base {
+  * {
+    @apply border-border  px-0;
+  }
+  body {
+    @apply bg-background text-foreground scroll-smooth;
+  }
+}
+
+.bulb::after {
+  content: "";
+  position: absolute;
+  background-image: url("/images/bulb.svg");
+  width: 150%;
+  height: 150%;
+  top: -130%;
+  left: 35%;
+  min-width: 50px;
+  min-height: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+}
+
+@media (max-width: 500px) {
+  .bulb::after {
+    top: -450%;
+    left: 0;
+  }
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 150%;
+  background-color: #903aff;
+  top: -160%;
+}
+
+.side_line::after {
+  content: "";
+  background-color: #d434fe;
+  display: block;
+  position: absolute;
+  width: 2px;
+  right: 0;
+  top: 0;
+  height: 93%;
+}
+.bottom_line::before {
+  content: "";
+  background-color: #d434fe;
+  display: block;
+  position: absolute;
+  width: 93%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+}
+
+.line_cap::after {
+  content: " ";
+  position: absolute;
+  width: 150%;
+  height: 100%;
+  left: -30px;
+  max-width: 250px;
+  bottom: -100%;
+  background-image: url("/images/line.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+}
+
+@media (max-width: 400px) {
+  .line_cap::after {
+    width: 130%;
+  }
+}
+
+.bg-gradient {
+  background: radial-gradient(
+      circle,
+      #782a99 0,
+      #421b5d 50%,
+      #26133d 70%,
+      #190f2c 100%
+    ),
+    lightgray;
+  background-blend-mode: hard-light;
 }
