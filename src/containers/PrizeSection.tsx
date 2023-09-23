@@ -6,7 +6,7 @@ type Props = {};
 // PrizeCard,
 const PrizeSection = (props: Props) => {
   return (
-    <section className="min-h-screen relative laptop:flex-col flex-row py-24 laptop:py-12 sm_mobile:py-8 items-center flex w-full  bg-footer px-24 sm_tablet:px-8 laptop:px-12 mobile:gap-16  laptop:gap-44">
+    <section className="min-h-screen relative laptop:flex-col flex-row py-24 laptop:py-12 sm_mobile:py-8 items-center flex w-full  bg-footer px-24 sm_tablet:px-8 laptop:px-12 mobile:gap-16 overflow-x-clip  laptop:gap-44">
       <div
         id="pane2"
         className="relative  aspect-square max-w-[40rem] flex-shrink-0 h-full w-full">

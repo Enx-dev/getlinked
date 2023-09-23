@@ -24,7 +24,7 @@ const TimelineItemWrapper = ({ item: { id, title, content, date } }: Props) => {
       setLeft(<TimeLineRigthPane className="text-right" date={date} />);
       setRight(<TimelineLeftPane title={title} content={content} />);
     }
-  }, []);
+  }, [content, date, id, title]);
 
   return (
     <>

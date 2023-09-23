@@ -50,7 +50,7 @@ const NavBar = (props: Props) => {
           <Link
             className="hover:text-transparent scroll-smooth pointer-events-auto scale-105"
             href="/#faq">
-            FAQ's
+            FAQ&apos;s
           </Link>
         </li>
         <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
@@ -97,10 +97,34 @@ const DropDown = ({ setIsOpen }: IProps) => {
         </div>
 
         <ul className="flex flex-col gap-8 text-lg font-semibold [&>*]:cursor-pointer">
-          <li>Timeline</li>
-          <li>Overview</li>
-          <li>FAQ's</li>
-          <li>Contact</li>
+          <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
+            <Link
+              className="hover:text-transparent scroll-smooth pointer-events-auto scale-105"
+              href="/#timeline">
+              Timeline
+            </Link>
+          </li>
+          <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
+            <Link
+              className="hover:text-transparent scroll-smooth pointer-events-auto scale-105"
+              href="/#info">
+              Overview
+            </Link>
+          </li>
+          <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
+            <Link
+              className="hover:text-transparent scroll-smooth pointer-events-auto scale-105"
+              href="/#faq">
+              FAQ&apos;s
+            </Link>
+          </li>
+          <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
+            <Link
+              className="hover:text-transparent pointer-events-auto scale-105"
+              href="/contact">
+              Contact
+            </Link>
+          </li>
         </ul>
         <Button variant="withHover" label="Register" />
       </div>

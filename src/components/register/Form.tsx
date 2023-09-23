@@ -203,7 +203,7 @@ const RegisterForm = (props: Props) => {
                 name="projectTopic"
                 render={({ field, fieldState }) => (
                   <FormItem className="w-full">
-                    <FormLabel>Project's Name</FormLabel>
+                    <FormLabel>Project&apos;s Name</FormLabel>
                     <FormControl>
                       <Input
                         maxLength={11}

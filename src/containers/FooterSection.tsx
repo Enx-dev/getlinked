@@ -47,7 +47,7 @@ const FooterSection = (props: Props) => {
                 <Link
                   className="hover:text-transparent pointer-events-auto scale-105"
                   href="#faq">
-                  FAQ's
+                  FAQ&apos;s
                 </Link>
               </li>
               <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
