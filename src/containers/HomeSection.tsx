@@ -99,14 +99,14 @@ const HomeSection = (props: Props) => {
         </div>
         <div
           id="pane2"
-          className="relative sm_tablet:max-w-lg aspect-square w-full hero_img">
-          {/* <Image
+          className="relative sm_tablet:max-w-lg aspect-square w-full">
+          <Image
             className="bg-blend-hard-light"
             src="/images/hero_img.png"
             fill
             alt="Hero_Image"
             loading="eager"
-          /> */}
+          />
         </div>
       </div>
       <div className="absolute flex sm_tablet:flex-col justify-between inset-0 -z-10">
