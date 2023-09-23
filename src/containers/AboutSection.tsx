@@ -7,7 +7,7 @@ type Props = {};
 
 const AboutSection = (props: Props) => {
   return (
-    <section className="h-[90vh] mobile:h-auto mobile:flex-col-reverse flex-row-reverse gap-12  py-12 flex w-full items-center justify-between mobile:px-8 laptop:px-12 px-24 border-b-2 border-neutral-500/25">
+    <section className="min-h-[90vh] mobile:h-auto mobile:flex-col-reverse flex-row-reverse gap-12  py-12 flex w-full items-center justify-between mobile:px-8 laptop:px-12 px-24 border-b-2 border-neutral-500/25">
       <div
         id="pane1"
         className="space-y-8 w-fit mobile:flex mobile:items-center">
@@ -31,13 +31,14 @@ const AboutSection = (props: Props) => {
           </p>
         </div>
       </div>
-      <div id="pane2" className="relative mobile:h-96 h-full w-full">
+      <div
+        id="pane2"
+        className="relative  tablet:max-w-lg aspect-square w-full">
         <Image
+          className="h-full"
           src="/images/The_big_idea.svg"
           alt="Ideas"
           fill
-          loading="lazy"
-          sizes="(max-width: 392px) 300px, 500px"
         />
       </div>
     </section>

@@ -67,12 +67,17 @@ const FooterSection = (props: Props) => {
                       width={18}
                       height={18}
                     />
-                    <Image
-                      src="/images/icons/x.svg"
-                      alt="x"
-                      width={18}
-                      height={18}
-                    />
+                    <Link
+                      href="https://twitter.com/getLinkedai"
+                      target="_blank">
+                      <Image
+                        src="/images/icons/x.svg"
+                        alt="x"
+                        width={18}
+                        height={18}
+                      />
+                    </Link>
+
                     <Image
                       className="object-contain h-5"
                       src="/images/icons/fb.svg"
@@ -80,12 +85,16 @@ const FooterSection = (props: Props) => {
                       width={18}
                       height={18}
                     />
-                    <Image
-                      src="/images/icons/linkedin.svg"
-                      alt="linkedin"
-                      width={18}
-                      height={18}
-                    />
+                    <Link
+                      href="https://www.linkedin.com/company/getlinked-ai"
+                      target="_blank">
+                      <Image
+                        src="/images/icons/linkedin.svg"
+                        alt="linkedin"
+                        width={18}
+                        height={18}
+                      />
+                    </Link>
                   </div>
                 </div>
               </li>

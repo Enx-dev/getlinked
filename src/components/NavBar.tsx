@@ -16,6 +16,8 @@ const NavBar = (props: Props) => {
         <Image
           src="/images/logo.svg"
           alt="Brand logo"
+          priority
+          loading="eager"
           width={150}
           height={100}
         />
@@ -31,41 +33,41 @@ const NavBar = (props: Props) => {
         />
       </div>
       {isOpen && <DropDown setIsOpen={setIsOpen} />}
-      <ul className="sm_tablet:hidden flex gap-16 tablet:gap-8 text-base  [&>*]:cursor-pointer">
-        <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
-          <Link
-            className="hover:text-transparent scroll-smooth pointer-events-auto scale-105"
-            href="/#timeline">
-            Timeline
-          </Link>
-        </li>
-        <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
-          <Link
-            className="hover:text-transparent scroll-smooth pointer-events-auto scale-105"
-            href="/#info">
-            Overview
-          </Link>
-        </li>
-        <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
-          <Link
-            className="hover:text-transparent scroll-smooth pointer-events-auto scale-105"
-            href="/#faq">
-            FAQ&apos;s
-          </Link>
-        </li>
-        <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
-          <Link
-            className="hover:text-transparent pointer-events-auto scale-105"
-            href="/contact">
-            Contact
-          </Link>
-        </li>
-      </ul>
-      <Button
-        className="sm_tablet:hidden tablet:block"
-        variant="withHover"
-        label="Register"
-      />
+      <div className="flex items-center gap-24">
+        <ul className="sm_tablet:hidden flex gap-16 tablet:gap-8 text-base  [&>*]:cursor-pointer">
+          <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
+            <Link
+              className="hover:text-transparent scroll-smooth pointer-events-auto scale-105"
+              href="/#timeline">
+              Timeline
+            </Link>
+          </li>
+          <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
+            <Link
+              className="hover:text-transparent scroll-smooth pointer-events-auto scale-105"
+              href="/#info">
+              Overview
+            </Link>
+          </li>
+          <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
+            <Link
+              className="hover:text-transparent scroll-smooth pointer-events-auto scale-105"
+              href="/#faq">
+              FAQ&apos;s
+            </Link>
+          </li>
+          <li className="hover:bg-main-gradient pointer-events-none bg-clip-text">
+            <Link
+              className="hover:text-transparent pointer-events-auto scale-105"
+              href="/contact">
+              Contact
+            </Link>
+          </li>
+        </ul>
+        <Link className="sm_tablet:hidden tablet:block" href="/register">
+          <Button variant="withHover" label="Register" />
+        </Link>
+      </div>
     </div>
   );
 };
@@ -126,7 +128,9 @@ const DropDown = ({ setIsOpen }: IProps) => {
             </Link>
           </li>
         </ul>
-        <Button variant="withHover" label="Register" />
+        <Link href="/register">
+          <Button variant="withHover" label="Register" />
+        </Link>
       </div>
       <div
         onKeyDown={(e) => handleKeyPress(e)}

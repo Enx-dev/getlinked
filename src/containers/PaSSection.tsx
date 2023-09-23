@@ -8,7 +8,7 @@ type Props = {};
 
 const PaSSection = (props: Props) => {
   return (
-    <section className="min-h-[90vh] overflow-x-clip relative gap-12  py-12 flex flex-col w-full items-center laptop:px-12  px-24 mobile:px-8">
+    <section className="min-h-[90vh] overflow-x-clip relative gap-12  py-12 flex flex-col w-full items-center laptop:px-12  px-24 mobile:px-8 border-b-2 border-neutral-500/25">
       <div
         id="pane1"
         className="space-y-8 w-fit mobile:flex mobile:flex-col mobile:items-center">

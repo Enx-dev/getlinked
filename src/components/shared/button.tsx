@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { VariantProps, cva } from "class-variance-authority";
+import Link from "next/link";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -26,9 +27,10 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   label: string;
   onClick?: () => void;
+  link?: string;
 }
 
-const Button = ({ label, variant, className, ...props }: ButtonProps) => {
+const Button = ({ label, variant, className, link, ...props }: ButtonProps) => {
   return (
     <div tabIndex={1} className={cn(buttonVariants({ variant, className }))}>
       <button

@@ -99,7 +99,7 @@ const RegisterForm = (props: Props) => {
     }
   }
   return (
-    <Card className="bg-main-purple/10 px-12 mx-auto sm_tablet:bg-transparent border-0 max-w-2xl sm_tablet:px-0">
+    <Card className="bg-main-purple/10 px-4 mx-auto sm_tablet:bg-transparent border-0 max-w-2xl sm_tablet:px-0">
       <Toaster richColors />
       <Success open={isOpen} setIsOpen={setIsOpen} />
       <CardHeader>
@@ -135,7 +135,7 @@ const RegisterForm = (props: Props) => {
             action=""
             className="space-y-8 sm_tablet:space-y-4 text-white flex flex-col"
             onSubmit={form.handleSubmit(onSubmit)}>
-            <div className="flex items-stretch sm_tablet:flex-col justify-between gap-8 sm_tablet:gap-4">
+            <div className="flex items-stretch sm_tablet:flex-col justify-between gap-4">
               <FormField
                 name="teamName"
                 render={({ field, fieldState }) => (
@@ -178,7 +178,7 @@ const RegisterForm = (props: Props) => {
                 )}
               />
             </div>
-            <div className="flex items-stretch sm_tablet:flex-col justify-between gap-8 sm_tablet:gap-4">
+            <div className="flex items-stretch sm_tablet:flex-col justify-between gap-4">
               <FormField
                 name="email"
                 render={({ field, fieldState }) => (
@@ -221,7 +221,7 @@ const RegisterForm = (props: Props) => {
                 )}
               />
             </div>
-            <div className="flex sm_tablet:gap-4 items-center justify-between gap-8">
+            <div className="flex gap-4 items-center justify-between">
               <FormField
                 name="categoty"
                 render={({ field, fieldState }) => (

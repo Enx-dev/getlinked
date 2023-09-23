@@ -7,7 +7,7 @@ type Props = {};
 
 const RulesSection = (props: Props) => {
   return (
-    <section className="h-[90vh] z-20 relative mobile:h-auto mobile:flex-col-reverse flex-row gap-12  py-12 flex w-full items-center justify-between mobile:px-8 laptop:px-12 px-24 border-b-2 border-neutral-500/25 overflow-x-clip">
+    <section className="min-h-[90vh] z-20 relative mobile:h-auto mobile:flex-col-reverse flex-row gap-12  py-12 flex w-full items-center justify-between mobile:px-8 laptop:px-12 px-24 border-b-2 border-neutral-500/25 overflow-x-clip">
       <div
         id="pane1"
         className="space-y-8 w-fit mobile:flex mobile:items-center">
@@ -31,14 +31,10 @@ const RulesSection = (props: Props) => {
           </p>
         </div>
       </div>
-      <div id="pane2" className="relative mobile:h-96 h-full w-full">
-        <Image
-          src="/images/rules.svg"
-          alt="Ideas"
-          fill
-          loading="lazy"
-          sizes="(max-width: 392px) 300px, 500px"
-        />
+      <div
+        id="pane2"
+        className="relative  tablet:max-w-lg aspect-square w-full">
+        <Image className="h-full" src="/images/rules.svg" alt="Ideas" fill />
       </div>
       <div className="absolute flex sm_tablet:flex-col justify-between z-10 inset-0">
         <div className=" max-w-[600px] min-w-[300px] w-[70vw] aspect-square opacity-20 sm_tablet:translate-x-[-30%] sm_tablet:translate-y-[20%] bg-gradient blur-2xl -z-10 rounded-full" />

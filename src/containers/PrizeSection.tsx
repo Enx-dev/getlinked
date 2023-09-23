@@ -9,7 +9,7 @@ const PrizeSection = (props: Props) => {
     <section className="min-h-screen relative laptop:flex-col flex-row py-24 laptop:py-12 sm_mobile:py-8 items-center flex w-full  bg-footer px-24 sm_tablet:px-8 laptop:px-12 mobile:gap-16 overflow-x-clip  laptop:gap-44">
       <div
         id="pane2"
-        className="relative  aspect-square max-w-[40rem] flex-shrink-0 h-full w-full">
+        className="relative  aspect-square sm_tablet:max-w-md max-w-[40rem] flex-shrink-0 h-full w-full">
         <Image
           className="h-full absolute z-10"
           src="/images/trophy.svg"
