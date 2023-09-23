@@ -19,7 +19,7 @@ function useCountdown() {
     seconds: "00",
   });
 
-  const getTimeRemaining = (e) => {
+  const getTimeRemaining = (e: any) => {
     const total = Date.parse(e) - Date.parse(String(new Date()));
     const seconds = Math.floor((total / 1000) % 60);
     const minutes = Math.floor((total / 1000 / 60) % 60);
@@ -32,7 +32,7 @@ function useCountdown() {
     };
   };
 
-  const startTimer = (e) => {
+  const startTimer = (e: any) => {
     let { total, hours, minutes, seconds } = getTimeRemaining(e);
     if (total >= 0) {
       setTimer({
@@ -43,7 +43,7 @@ function useCountdown() {
     }
   };
 
-  const clearTimer = (e) => {
+  const clearTimer = (e: any) => {
     // If you adjust it you should also need to
     // adjust the Endtime formula we are about
     // to code next
